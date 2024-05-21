@@ -8,7 +8,7 @@ from web.models import Person
 # CRUD
 # create OK
 # read OK
-# update
+# update OK
 # delete OK
 
 
@@ -51,3 +51,21 @@ def personsDeleteView(request, id):
         item.delete()
         return redirect('/persons/')
 
+def personsUpdateView(request, id):
+    item = Person.objects.get(id = id)
+    if request.method == "GET":
+        form = PersonForm(instance = item)
+        return render(request, 'persons/update.html', {
+            "item": item,
+            "form": form,
+        })
+    if request.method == "POST":
+        form = PersonForm(request.POST, instance = item)
+        if form.is_valid():
+            form.save()
+            return redirect("/persons/")
+        else:
+            return render(request, 'persons/update.html', {
+                "item": item,
+                "form": form,
+            })  

@@ -24,6 +24,7 @@
             <td>{{ item.age }}</td>
             <td>
                 <a class="btn btn-info" href="{% url 'persons-detail' id=item.id %}">View</a>
+                <a class="btn btn-info" href="{% url 'persons-update' id=item.id %}">Edit</a>
                 <a class="btn btn-danger" href="{% url 'persons-delete' id=item.id %}">Delete</a>
             </td>
           </tr>
