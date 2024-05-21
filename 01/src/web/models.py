@@ -15,3 +15,46 @@ class Person(models.Model):
         verbose_name="Description",
         blank=False,
     )
+    created = models.DateTimeField(
+        verbose_name="Created",
+        auto_now_add=True,
+    )
+    updated = models.DateTimeField(
+        verbose_name="Updated",
+        auto_now=True,
+    )
+
+    def __str__(self):
+        return self.name
+
+
+class Review(models.Model):
+    person = models.ForeignKey(
+        Person,
+        verbose_name="Person",
+        blank=False,
+        on_delete=models.CASCADE,
+    )
+    details = models.TextField(
+        verbose_name="Details",
+        blank=False,
+    )
+    rating = models.PositiveSmallIntegerField(
+        verbose_name="Rate (1-5)",
+        blank=False,
+    )
+    created = models.DateTimeField(
+        verbose_name="Created",
+        auto_now_add=True,
+    )
+    updated = models.DateTimeField(
+        verbose_name="Updated",
+        auto_now=True,
+    )
+
+    def __str__(self):
+        return "{name} - {rating}".format(
+            name = self.person.name,
+            rating=self.rating,
+        )
+

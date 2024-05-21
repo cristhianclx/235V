@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from web.models import Person
 
-# Create your views here.
+
+def personsView(request):
+    items = Person.objects.all()
+    return render(request, 'persons/list.html', {
+        "items": items,
+    })
