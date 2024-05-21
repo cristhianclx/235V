@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Person - {{ item.name }}</title>
+{% endblock %}
+
+{% block body %}
+<a href="{% url 'persons-list' %}" class="btn btn-info">Go back</a>
+<hr>
+<h1>Details</h1>
+    <hr>
+    <p><b>ID:</b> {{ item.id }}</p>
+    <p><b>Name:</b> {{ item.name }}</p>
+    <p><b>Age:</b> {{ item.age }}</p>
+    <p><b>Description:</b> {{ item.description }}</p>
+{% endblock %}

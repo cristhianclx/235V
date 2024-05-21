@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Persons - Add</title>
+{% endblock %}
+
+{% block body %}
+<a href="{% url 'persons-list' %}" class="btn btn-info">Go back</a>
+<hr>
+
+<form method="POST" action="{% url 'persons-add' %}" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-info">Save</button>
+</form>
+
+{% endblock %}

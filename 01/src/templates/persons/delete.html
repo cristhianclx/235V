@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Person - {{ item.name }} - Delete</title>
+{% endblock %}
+
+{% block body %}
+<a href="{% url 'persons-list' %}" class="btn btn-info">Go back</a>
+<hr>
+<p>Are you sure you want to delete person {{ item.name }}?</p>
+
+<form method="POST" action="{% url 'persons-delete' id=item.id %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+{% endblock %}
