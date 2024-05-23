@@ -1,0 +1,19 @@
+# 1st time
+
+python3 -m venv venv # manejar todo los paquetes
+source venv/bin/activate # activar entorno (linux)
+pip install -r requirements.txt
+
+
+# 2nd o +
+
+source venv/bin/activate # activar entorno (linux)
+pip install -r requirements.txt
+
+python src/manage.py runserver # correr el proyecto
+
+# utils
+
+python src/manage.py makemigrations # crear la migracion 
+python src/manage.py migrate # run migrations
+python src/manage.py createsuperuser # crear un usuario tipo superuser
