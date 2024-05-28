@@ -1,0 +1,31 @@
+# 1st time
+
+python3 -m venv venv # manejar todo los paquetes
+source venv/bin/activate # activar entorno (linux)
+venv\Scripts\activate.bat # activar entorno (windows)
+pip install -r requirements.txt
+
+django-admin startproject src # crea el proyecto en django
+
+python src/manage.py runserver # correr el proyecto
+cd src && python manage.py startapp web # poder agregar una carpeta para meter codigo
+# despues de agregar una app, ir a settings.py y agregar a installed_apps
+
+# 2nd o +
+
+source venv/bin/activate # activar entorno (linux)
+venv\Scripts\activate.bat # activar entorno (windows)
+pip install -r requirements.txt
+
+python src/manage.py runserver # correr el proyecto
+
+# utils
+
+python src/manage.py makemigrations # crear la migracion 
+python src/manage.py migrate # run migrations
+python src/manage.py createsuperuser # crear un usuario tipo superuser
+
+python src/manage.py dumpdata --indent=2 web.person > persons.json
+python src/manage.py loaddata persons.json
+
+python src/manage.py inspectdb
