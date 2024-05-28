@@ -1,0 +1,35 @@
+[
+{
+  "model": "web.person",
+  "pk": 1,
+  "fields": {
+    "name": "Jesús",
+    "age": 33,
+    "description": "A great man",
+    "created": "2024-05-21T01:46:20.248Z",
+    "updated": "2024-05-21T03:07:56.912Z"
+  }
+},
+{
+  "model": "web.person",
+  "pk": 2,
+  "fields": {
+    "name": "Pedro",
+    "age": 18,
+    "description": "An engineer",
+    "created": "2024-05-21T01:46:20.248Z",
+    "updated": "2024-05-21T03:05:21.143Z"
+  }
+},
+{
+  "model": "web.person",
+  "pk": 3,
+  "fields": {
+    "name": "Cristhian",
+    "age": 35,
+    "description": "A good engineer",
+    "created": "2024-05-21T01:46:20.248Z",
+    "updated": "2024-05-21T03:05:21.143Z"
+  }
+}
+]

@@ -27,3 +27,5 @@ python src/manage.py createsuperuser # crear un usuario tipo superuser
 
 python src/manage.py dumpdata --indent=2 web.person > persons.json
 python src/manage.py loaddata persons.json
+
+python src/manage.py inspectdb
