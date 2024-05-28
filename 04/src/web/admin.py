@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from web.models import Document, DocumentMatch
+
+
+admin.site.register(Document)
+admin.site.register(DocumentMatch)

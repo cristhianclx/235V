@@ -18,7 +18,7 @@
             <form method="POST" action="{% url 'index' %}" enctype="multipart/form-data" novalidate>
                 {% csrf_token %}
                 <div class="mb-3">
-                    {{ form.document }}
+                    {{ form.cv }}
                   </div>
                   <div class="gap-2">
                     <button type="submit" class="btn btn-primary btn-lg">Buscar empleo</button>

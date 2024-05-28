@@ -2,7 +2,7 @@ from django import forms
 from web.models import Document
 
 class DocumentForm(forms.ModelForm):
-    document = forms.FileField(
+    cv = forms.FileField(
         label="Subir CV",
         widget=forms.FileInput(
             attrs={"class": "form-control form-control-lg"}
@@ -11,4 +11,4 @@ class DocumentForm(forms.ModelForm):
     
     class Meta:
         model = Document
-        fields = ("document",)
+        fields = ("cv",)
