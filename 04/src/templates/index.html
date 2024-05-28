@@ -15,6 +15,11 @@
             <div class="col-lg-6 mx-auto">
               <p class="lead mb-4">Te damos las mejores recomendaciones laborales usando IA.<br>Sólo envia tu CV en word y tendrás recomendaciones en segundos.<p>
             </div>
+            {% if errors %}
+            <div class="alert alert-danger" role="alert">
+              {{ errors }}
+            </div>
+            {% endif %}
             <form method="POST" action="{% url 'index' %}" enctype="multipart/form-data" novalidate>
                 {% csrf_token %}
                 <div class="mb-3">
