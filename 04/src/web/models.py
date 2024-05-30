@@ -1,10 +1,11 @@
+from django.core.validators import FileExtensionValidator
 from django.db import models
-
 
 class Document(models.Model):
     cv = models.FileField(
         upload_to="cv",
         blank=False,
+        validators=[FileExtensionValidator(allowed_extensions=["pdf", "docx"])]
     )
     created_at = models.DateTimeField(
         auto_now_add=True,

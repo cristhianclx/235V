@@ -5,7 +5,10 @@ class DocumentForm(forms.ModelForm):
     cv = forms.FileField(
         label="Subir CV",
         widget=forms.FileInput(
-            attrs={"class": "form-control form-control-lg"}
+            attrs={
+                "class": "form-control form-control-lg",
+                "accept": ".pdf,.docx"
+            }
         )
     )
     

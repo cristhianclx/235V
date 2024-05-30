@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,9 +9,25 @@
   </head>
   <body>
     <main>
+
+<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}">
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Go">
+</form>
+
         <div class="px-4 py-5 my-5 text-center">
             <img class="d-block mx-auto mb-4" src="{% static 'home.jpg' %}" alt="">
-            <h1 class="display-5 fw-bold text-body-emphasis">Buscador de trabajo</h1>
+            <h1 class="display-5 fw-bold text-body-emphasis">{% translate "Buscador de trabajo" %}</h1>
             <div class="col-lg-6 mx-auto">
               <p class="lead mb-4">Te damos las mejores recomendaciones laborales usando IA.<br>Sólo envia tu CV en word y tendrás recomendaciones en segundos.<p>
             </div>

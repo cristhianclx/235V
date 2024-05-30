@@ -29,3 +29,8 @@ python src/manage.py dumpdata --indent=2 web.person > persons.json
 python src/manage.py loaddata persons.json
 
 python src/manage.py inspectdb
+
+cd src && python manage.py makemessages -l en # generate messages for translation
+cd src && python manage.py compilemessages -l en # compile messages
+
+python src/manage.py shell

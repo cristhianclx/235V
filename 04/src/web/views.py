@@ -24,6 +24,9 @@ class IndexView(View):
         if form.is_valid():
             instance = form.save()
             document_in_text = parseFile(instance.cv)
+            if len(document_in_text.split(" ")) < 100:
+                form = DocumentForm()
+                return render(request, "index.html", {"form": form, "errors": "We only accept CVs with some information"})
             text_to_match = normalize(document_in_text)
             tokens = nltk.word_tokenize(text_to_match)
             tagged = nltk.pos_tag(tokens)
