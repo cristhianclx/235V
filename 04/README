@@ -34,3 +34,6 @@ cd src && python manage.py makemessages -l en # generate messages for translatio
 cd src && python manage.py compilemessages -l en # compile messages
 
 python src/manage.py shell
+
+# management commands (custom)
+python src/manage.py get_data_from_bumeran
