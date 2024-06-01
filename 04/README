@@ -37,3 +37,13 @@ python src/manage.py shell
 
 # management commands (custom)
 python src/manage.py get_data_from_bumeran
+
+cd src && gunicorn -k gevent -w 1 src.wsgi
+
+heroku login
+- Procfile
+- runtime
+heroku create
+git add .
+git commit -m "something"
+git push heroku main

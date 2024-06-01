@@ -1,0 +1,1 @@
+web: cd src && gunicorn -k gevent -w 1 src.wsgi
